@@ -3,338 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>小区包子食堂 · 现蒸现卖</title>
-  <meta name="description" content="邻里手工包子，每日清晨开笼。鲜肉、素菜、豆沙，带您家的味道。">
+  <title>小区包子食堂 · Bāozi Atelier</title>
+  <meta name="description" content="邻里手工包子，晨笼现启。以面点匠心，呈日常之味。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #2c2420;
-      --muted: #6b5e56;
-      --cream: #faf6f0;
-      --paper: #fffefb;
-      --steam: #e8dfd4;
-      --accent: #c45c3e;
-      --accent-soft: rgba(196, 92, 62, 0.12);
-      --green: #3d5c4a;
-      --radius: 14px;
-      --shadow: 0 18px 48px rgba(44, 36, 32, 0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
-      color: var(--ink);
-      background: var(--cream);
-      line-height: 1.65;
-      font-size: 1rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: color-mix(in srgb, var(--paper) 92%, transparent);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--steam);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.85rem 0;
-      gap: 1rem;
-    }
-
-    .brand {
-      font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
-      font-size: 1.35rem;
-      letter-spacing: 0.06em;
-      color: var(--ink);
-    }
-
-    .brand span {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      font-size: 0.92rem;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .hero {
-      padding: 3.5rem 0 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -40% -20% auto;
-      height: 140%;
-      background: radial-gradient(ellipse at 30% 20%, var(--accent-soft), transparent 55%),
-                  radial-gradient(ellipse at 80% 40%, rgba(61, 92, 74, 0.08), transparent 45%);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: center;
-      position: relative;
-    }
-
-    @media (min-width: 820px) {
-      .hero-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 3rem;
-      }
-    }
-
-    .hero h1 {
-      font-family: "ZCOOL XiaoWei", serif;
-      font-size: clamp(2.1rem, 4.5vw, 2.85rem);
-      font-weight: 400;
-      line-height: 1.25;
-      margin-bottom: 1rem;
-    }
-
-    .hero-lead {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 32em;
-      margin-bottom: 1.75rem;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.72rem 1.35rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 8px 24px rgba(196, 92, 62, 0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(196, 92, 62, 0.4);
-    }
-
-    .btn-ghost {
-      background: var(--paper);
-      color: var(--ink);
-      border: 1px solid var(--steam);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .hero-card {
-      background: var(--paper);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--steam);
-    }
-
-    .hero-card h2 {
-      font-family: "ZCOOL XiaoWei", serif;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: var(--green);
-    }
-
-    .pill-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .pill-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .pill-list li strong {
-      color: var(--ink);
-      min-width: 4.5em;
-    }
-
-    section {
-      padding: 2.75rem 0;
-    }
-
-    section.alt {
-      background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
-      border-top: 1px solid var(--steam);
-      border-bottom: 1px solid var(--steam);
-    }
-
-    .section-title {
-      font-family: "ZCOOL XiaoWei", serif;
-      font-size: 1.65rem;
-      margin-bottom: 0.35rem;
-      text-align: center;
-    }
-
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .card {
-      background: var(--paper);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      border: 1px solid var(--steam);
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .price {
-      margin-top: 0.85rem;
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 0.95rem;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 640px) {
-      .info-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .info-block {
-      background: var(--paper);
-      padding: 1.5rem 1.75rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--steam);
-    }
-
-    .info-block h3 {
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-      color: var(--green);
-    }
-
-    .info-block dl {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .info-block dt {
-      font-weight: 700;
-      color: var(--ink);
-      margin-top: 0.65rem;
-    }
-
-    .info-block dt:first-child {
-      margin-top: 0;
-    }
-
-    footer {
-      padding: 2rem 0 2.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    footer .wrap > p + p {
-      margin-top: 0.35rem;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand">小区<span>包子食堂</span></div>
+  <header class="site-header" role="banner">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="返回页首">小区<em>包子食堂</em></a>
       <nav class="nav-links" aria-label="页面导航">
         <a href="#teaser">招牌</a>
         <a href="#menu">品类</a>
@@ -343,79 +22,107 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="top">
+  <main id="top">
+    <section class="hero">
       <div class="wrap hero-grid">
-        <div>
-          <h1>一笼热气，一份邻里情</h1>
+        <div class="reveal" data-reveal>
+          <p class="kicker">Est. 邻里 · 晨市</p>
+          <h1>一笼热气<br>一份匠心</h1>
+          <p class="hero-sub-en" lang="en">Hand-folded, steamed to order — warmth before the city wakes.</p>
           <p class="hero-lead">
-            清晨现和面、现调馅，蒸笼时分准时开盖。无论是赶早班的邻居，还是散步路过的您，我们都备好了一笼暖手的包子。
+            现和面、现调馅，时辰一到准时开笼。为赶早班的邻人与漫步而过的您，留一份刚离蒸笼、指间尚温的踏实。
           </p>
+          <div class="star-trio" aria-hidden="true">
+            <span>◆</span><span>◆</span><span>◆</span>
+          </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#visit">查看营业时间</a>
-            <a class="btn btn-ghost" href="#menu">今日包子单</a>
+            <a class="btn btn-primary" href="#visit">营业时间</a>
+            <a class="btn btn-ghost" href="#menu">品鉴单子</a>
           </div>
         </div>
-        <aside class="hero-card" id="teaser" aria-labelledby="today-title">
-          <h2 id="today-title">今日推荐</h2>
+
+        <aside class="hero-aside reveal" id="teaser" data-reveal aria-labelledby="today-title">
+          <div class="hero-aside-head">
+            <h2 id="today-title">今晨推介</h2>
+            <span class="aside-tag">Chef’s pick</span>
+          </div>
           <ul class="pill-list">
-            <li><strong>鲜肉大包</strong> 三分肥七分瘦，汤汁锁在褶里。</li>
-            <li><strong>荠菜鸡蛋</strong> 当季野菜，清爽不油腻。</li>
-            <li><strong>红糖豆沙</strong> 慢熬豆沙，微甜不腻口。</li>
+            <li>
+              <strong>鲜肉大包</strong>
+              三分肥七分瘦，汤汁收于褶间，入口鲜而不浊。
+            </li>
+            <li>
+              <strong>荠菜鸡蛋</strong>
+              应季野菜与蛋液，清爽如山泉边一口早饭。
+            </li>
+            <li>
+              <strong>红糖豆沙</strong>
+              慢熬豆沙，甜度克制，尾韵微糯。
+            </li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section class="alt" id="menu">
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament-mark">◇</span>
+    </div>
+
+    <section class="section--light" id="menu">
       <div class="wrap">
-        <h2 class="section-title">包子品类</h2>
-        <p class="section-sub">每日限量供应，售完即止；可按斤预订次日取货。</p>
-        <div class="cards">
-          <article class="card">
+        <header class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Carte</p>
+          <h2 class="section-title">包子品类</h2>
+          <p class="section-sub">每日限量，售罄即止；十份以上或隔日大批取货，请提前订笼。</p>
+        </header>
+        <div class="menu-board reveal" data-reveal>
+          <article class="menu-item">
             <h3>经典肉馅</h3>
-            <p>鲜肉大包、酱肉小包、梅干菜扣肉包。面皮松软，馅心饱满。</p>
-            <p class="price">￥2.5 起 / 个</p>
+            <p>鲜肉大包、酱肉小包、梅干菜扣肉。面皮松软有筋骨，馅心丰盈、汁水含蓄。</p>
+            <p class="price">￥2.5 起 / 件</p>
           </article>
-          <article class="card">
+          <article class="menu-item">
             <h3>清爽素馅</h3>
-            <p>香菇青菜、韭菜鸡蛋、麻婆豆腐素包，适合搭配一碗豆浆。</p>
-            <p class="price">￥2 起 / 个</p>
+            <p>香菇青菜、韭菜鸡蛋、麻婆豆腐素包。宜配一碗豆浆，清口不腻。</p>
+            <p class="price">￥2 起 / 件</p>
           </article>
-          <article class="card">
+          <article class="menu-item">
             <h3>甜味点心</h3>
-            <p>豆沙包、红糖开花馒头、奶黄包，小朋友也爱。</p>
-            <p class="price">￥2 起 / 个</p>
+            <p>豆沙包、红糖开花馒头、奶黄包。孩童与长辈皆宜的一口温柔。</p>
+            <p class="price">￥2 起 / 件</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="visit">
+    <section class="section--dark" id="visit">
       <div class="wrap">
-        <h2 class="section-title">到店与预订</h2>
-        <p class="section-sub">欢迎街坊邻居提前电话留包，高峰期可能需要短暂排队。</p>
-        <div class="info-grid">
-          <div class="info-block">
-            <h3>营业信息</h3>
+        <header class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Visit</p>
+          <h2 class="section-title">到店与预订</h2>
+          <p class="section-sub">欢迎电话留包；高峰时段或需稍作等候，敬请见谅。</p>
+        </header>
+        <div class="visit-grid reveal" data-reveal>
+          <div class="visit-panel">
+            <h3>联络</h3>
             <dl>
               <dt>营业时间</dt>
-              <dd>每日 6:30 — 11:00 · 下午休息</dd>
+              <dd>每日 6:30 — 11:00 · 午后休店</dd>
               <dt>地址（示例）</dt>
               <dd>幸福小区东门内侧 · 12 号楼一层底商</dd>
-              <dt>预订电话</dt>
+              <dt>预订专线</dt>
               <dd><a href="tel:13800000000">138-0000-0000</a></dd>
             </dl>
           </div>
-          <div class="info-block">
-            <h3>小提示</h3>
+          <div class="visit-panel">
+            <h3>须知</h3>
             <dl>
-              <dt>支付方式</dt>
+              <dt>支付</dt>
               <dd>现金、微信、支付宝均可。</dd>
-              <dt>团餐 / 次日取</dt>
-              <dd>十份以上或第二天大批量，请前一天 18:00 前电话确认。</dd>
-              <dt>过敏提示</dt>
-              <dd>含麸质、大豆、部分馅料含虾粉，详情请当面询问店员。</dd>
+              <dt>团餐 / 隔日取</dt>
+              <dd>大批量请前一日 18:00 前电话确认。</dd>
+              <dt>过敏</dt>
+              <dd>含麸质、大豆；部分馅料含虾粉，请向店员确认。</dd>
             </dl>
           </div>
         </div>
@@ -423,11 +130,13 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
-      <p>小区包子食堂 · 用心包好每一个早晨</p>
-      <p>本页为示例首页，电话与地址请替换为实际信息。</p>
+      <p>小区包子食堂 · 晨笼现启</p>
+      <p>示例站：请替换电话与地址为门店真实信息。</p>
     </div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
